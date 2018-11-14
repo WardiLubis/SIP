@@ -1,3 +1,16 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,9 +45,12 @@
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active" role="presentation"><a href="halamanLapak01.php">Temukan Ternak</a></li>
-                    <li role="presentation"><a href="#bottom" class="page-scroll">Kontak </a></li>
-                    <li role="presentation"><a href="login.php">Log In</a></li>
+                    <li class="active" role="presentation"><a href="halamanLapak.php">Temukan Ternak</a></li>
+                    <li role="presentation"><a href="#bottom" class="page-scroll">Kontak</a></li>
+                    <?php  if (isset($_SESSION['username'])) : ?>
+                    <li role="presentation"><a href="profile.html"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
+                    <li role="presentation"><a href="index.php?logout='1'" class="page-scroll">Log Out</a></li>
+                    <?php endif ?>
                 </ul>
             </div>
         </div>
@@ -50,7 +66,7 @@
                 <div class="col-md-6 col-md-pull-3 get-it">
                     <h1>SISTEM INFORMASI PETERNAKAN</h1>
                     <p class="teks01">Situs pusat informasi peternakan di kota malang raya.</p>
-                    <p><a class="btn btn-primary btn-lg" role="button" href="login.php">login </a><a class="btn btn-success btn-lg" role="button" href="register.html">daftar </a></p>
+                    <p><a class="btn btn-primary btn-lg" role="button" href="login.html">login </a><a class="btn btn-success btn-lg" role="button" href="register.html">daftar </a></p>
                 </div>
             </div>
         </div>
@@ -79,13 +95,14 @@
         </div>
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
                   <a class="dark-grey-text" href="login.html">Login</a>
                 </p>
                 <p>
                   <a class="dark-grey-text" href="register.html">Daftar</a>
                 </p>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                
         </div>
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 id="bottom" class="text-uppercase font-weight-bold">Contact</h6>
@@ -113,5 +130,4 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/pagescroll.js"></script>
 </body>
-
 </html>
