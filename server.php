@@ -45,7 +45,7 @@ if (isset($_POST['reg_user'])) {
   	$query = "INSERT INTO peternak (username, email, password) 
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
-  	$_SESSION['username'] = $username;
+    $_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: index.php');
   }
@@ -67,6 +67,11 @@ if (isset($_POST['login_user'])) {
     $results = mysqli_query($db, $query);
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['username'] = $username;
+      $row = mysqli_fetch_assoc($results);
+      $results = mysqli_query($db, $query);
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['noHP'] = $row['nomorHP'];
+      $_SESSION['alamat'] = $row['alamat'];
       $_SESSION['success'] = "You are now logged in";
       header('location: index.php');
     }else {
@@ -74,5 +79,4 @@ if (isset($_POST['login_user'])) {
     }
   }
 }
-
 ?>

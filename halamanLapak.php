@@ -235,13 +235,11 @@
 </div>
 <footer style="background-color:#21d192" class="py-5">
   <div class="container">
-    <p class="m-0 text-center text-white"></p>
+    <p class="m-0 text-center text-white">Sistem Informasi Peternakan Malang Raya</p>
   </div>
 </footer>
 
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>

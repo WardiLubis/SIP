@@ -86,7 +86,7 @@
                 Belum punya akun?
               </span>
 
-              <a href="register.html" class="txt2">
+              <a href="register.php" class="txt2">
                 Daftar
               </a>
             </li>

@@ -47,10 +47,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active" role="presentation"><a href="halamanLapak.php">Temukan Ternak</a></li>
                     <li role="presentation"><a href="#bottom" class="page-scroll">Kontak</a></li>
-                    <?php  if (isset($_SESSION['username'])) : ?>
-                    <li role="presentation"><a href="profile.html"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
-                    <li role="presentation"><a href="index.php?logout='1'" class="page-scroll">Log Out</a></li>
-                    <?php endif ?>
+                    <li role="presentation"><a href="profile.php"><strong><?php echo $_SESSION['username'];?></strong></a></li>
+                    <li role="presentation"><a href="index.html" class="page-scroll">Log Out</a></li>
                 </ul>
             </div>
         </div>
@@ -59,14 +57,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-push-7 phone-preview">
-                    <div class="iphone-mockup"><img src="assets/img/iphone.svg" class="device">
-                        <div class="screen"></div>
+                    <div class="iphone-mockup"><img src="assets/img/iphonesip.png" class="device">
                     </div>
                 </div>
                 <div class="col-md-6 col-md-pull-3 get-it">
                     <h1>SISTEM INFORMASI PETERNAKAN</h1>
                     <p class="teks01">Situs pusat informasi peternakan di kota malang raya.</p>
-                    <p><a class="btn btn-primary btn-lg" role="button" href="login.html">login </a><a class="btn btn-success btn-lg" role="button" href="register.html">daftar </a></p>
+                    <p><a class="btn btn-success btn-lg" role="button" href="halamanLapak.php">Temukan ternak</a></p>
                 </div>
             </div>
         </div>
@@ -96,10 +93,7 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase font-weight-bold">Useful links</h6>
                 <p>
-                  <a class="dark-grey-text" href="login.html">Login</a>
-                </p>
-                <p>
-                  <a class="dark-grey-text" href="register.html">Daftar</a>
+                  <a class="dark-grey-text" href="register.php">Daftar</a>
                 </p>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 
